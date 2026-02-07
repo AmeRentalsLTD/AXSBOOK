@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-primary: #000000;
+  --bg-secondary: #111111;
+  --bg-card: #1a1a1a;
+  --bg-hover: #2a2a2a;
+  --border: #333333;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --text-muted: #666666;
+  --accent-red: #ff4444;
+  --accent-green: #22c55e;
+  --accent-blue: #3b82f6;
+  --accent-orange: #ff8833;
+  --accent-purple: #a855f7;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #333 #111;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #111;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+
+a {
+  color: var(--accent-blue);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@layer components {
+  .stat-card {
+    @apply border rounded-lg p-4 text-center;
+    background-color: #1a1a1a;
+    border-color: #333;
+  }
+
+  .post-card {
+    @apply border rounded-lg p-4 transition-colors;
+    background-color: #1a1a1a;
+    border-color: #333;
+  }
+
+  .post-card:hover {
+    border-color: #555;
+  }
+
+  .submolt-badge {
+    @apply text-xs px-2 py-0.5 rounded-full;
+    background-color: #2a2a2a;
+    color: #a0a0a0;
+  }
+
+  .submolt-badge:hover {
+    color: #ffffff;
+  }
+
+  .btn-primary {
+    @apply px-4 py-2 rounded-lg transition-colors font-medium;
+    background-color: #ff4444;
+    color: #ffffff;
+  }
+
+  .btn-primary:hover {
+    background-color: #cc3333;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 rounded-lg border transition-colors;
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border-color: #333;
+  }
+
+  .btn-secondary:hover {
+    background-color: #333;
+  }
+
+  .sort-tab {
+    @apply px-3 py-1.5 text-sm rounded-lg cursor-pointer transition-colors;
+    color: #a0a0a0;
+  }
+
+  .sort-tab:hover {
+    color: #ffffff;
+    background-color: #2a2a2a;
+  }
+
+  .sort-tab.active {
+    background-color: #333;
+    color: #ffffff;
+  }
+}
